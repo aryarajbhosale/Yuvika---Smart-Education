@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YUVIKA - Digital Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f0f4f8;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .bottom-tab-active {
+            color: #4f46e5 !important;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="w-[430px] h-[932px] bg-gray-800 rounded-[60px] p-3 shadow-2xl border-4 border-gray-900">
+        <div class="w-full h-full bg-slate-50 rounded-[48px] overflow-hidden relative">
+            <div class="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-gray-900 rounded-full z-20"></div>
+
+            <div id="app-screen" class="w-full h-full flex flex-col">
+                <header class="px-6 pt-14 pb-4">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-800">YUVIKA</h1>
+                            <p class="text-sm text-gray-500">ਯੁਵਿਕਾ</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-indigo-200 border-2 border-indigo-400 overflow-hidden">
+                            <img src="https://placehold.co/48x48/E0E7FF/4F46E5?text=G" alt="Student profile picture" class="object-cover w-full h-full" />
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h2 class="text-2xl font-bold text-gray-900">
+                            Welcome back, Gurpreet!
+                        </h2>
+                    </div>
+                </header>
+
+                <nav class="px-6 py-2">
+                    <div class="flex items-center space-x-4 overflow-x-auto pb-2 custom-scrollbar">
+                        <button class="tab-button px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-full shadow-md whitespace-nowrap" data-tab="dashboard">
+                            Dashboard
+                        </button>
+                        <button class="tab-button px-4 py-2 text-sm font-semibold text-gray-600 bg-white rounded-full shadow-sm whitespace-nowrap" data-tab="subjects">
+                            Subjects
+                        </button>
+                        <button class="tab-button px-4 py-2 text-sm font-semibold text-gray-600 bg-white rounded-full shadow-sm whitespace-nowrap" data-tab="offline">
+                            Offline Content
+                        </button>
+                        <button class="tab-button px-4 py-2 text-sm font-semibold text-gray-600 bg-white rounded-full shadow-sm whitespace-nowrap" data-tab="progress">
+                            Progress
+                        </button>
+                    </div>
+                </nav>
+
+                <main id="main-content" class="flex-1 overflow-y-auto px-6 pt-4 pb-28 custom-scrollbar">
+                    <div id="dashboard" class="tab-content active">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            Your Learning Snapshot
+                        </h3>
+                        <p class="text-sm text-gray-500 mb-4">Continue where you left off and see your progress.</p>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-2xl shadow-lg flex items-center space-x-4 border border-gray-100 transition-transform hover:scale-105">
+                                <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="calculator" class="w-8 h-8 text-green-600"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-gray-800">Mathematics</h4>
+                                    <p class="text-sm text-gray-500">ਗਣਿਤ</p>
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                                        <div class="bg-green-600 h-2.5 rounded-full" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                <i data-lucide="chevron-right" class="text-gray-400"></i>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl shadow-lg flex items-center space-x-4 border border-gray-100 transition-transform hover:scale-105">
+                                <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="laptop" class="w-8 h-8 text-blue-600"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-gray-800">Computer Skills</h4>
+                                    <p class="text-sm text-gray-500">ਕੰਪਿਊਟਰ ਹੁਨਰ</p>
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                                        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 45%"></div>
+                                    </div>
+                                </div>
+                                <i data-lucide="chevron-right" class="text-gray-400"></i>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl shadow-lg flex items-center space-x-4 border border-gray-100 transition-transform hover:scale-105">
+                                <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="flask-conical" class="w-8 h-8 text-purple-600"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-gray-800">Science</h4>
+                                    <p class="text-sm text-gray-500">ਵਿਗਿਆਨ</p>
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                                        <div class="bg-purple-600 h-2.5 rounded-full" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <i data-lucide="chevron-right" class="text-gray-400"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="subjects" class="tab-content">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">All Subjects</h3>
+                        <p class="text-sm text-gray-500 mb-4">Browse through all available subjects to start learning.</p>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-2xl shadow-lg flex items-center space-x-4 border border-gray-100 transition-transform hover:scale-105">
+                                <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="calculator" class="w-8 h-8 text-green-600"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-gray-800">Mathematics</h4>
+                                    <p class="text-sm text-gray-500">ਗਣਿਤ</p>
+                                </div>
+                                <i data-lucide="chevron-right" class="text-gray-400"></i>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl shadow-lg flex items-center space-x-4 border border-gray-100 transition-transform hover:scale-105">
+                                <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="laptop" class="w-8 h-8 text-blue-600"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-gray-800">Computer Skills</h4>
+                                    <p class="text-sm text-gray-500">ਕੰਪਿਊਟਰ ਹੁਨਰ</p>
+                                </div>
+                                <i data-lucide="chevron-right" class="text-gray-400"></i>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl shadow-lg flex items-center space-x-4 border border-gray-100 transition-transform hover:scale-105">
+                                <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="flask-conical" class="w-8 h-8 text-purple-600"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-gray-800">Science</h4>
+                                    <p class="text-sm text-gray-500">ਵਿਗਿਆਨ</p>
+                                </div>
+                                <i data-lucide="chevron-right" class="text-gray-400"></i>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl shadow-lg flex items-center space-x-4 border border-gray-100 transition-transform hover:scale-105">
+                                <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="spell-check" class="w-8 h-8 text-orange-600"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-gray-800">English</h4>
+                                    <p class="text-sm text-gray-500">ਅੰਗਰੇਜ਼ੀ</p>
+                                </div>
+                                <i data-lucide="chevron-right" class="text-gray-400"></i>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl shadow-lg flex items-center space-x-4 border border-gray-100 transition-transform hover:scale-105">
+                                <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="book" class="w-8 h-8 text-red-600"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-gray-800">History</h4>
+                                    <p class="text-sm text-gray-500">ਇਤਿਹਾਸ</p>
+                                </div>
+                                <i data-lucide="chevron-right" class="text-gray-400"></i>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl shadow-lg flex items-center space-x-4 border border-gray-100 transition-transform hover:scale-105">
+                                <div class="w-16 h-16 bg-teal-100 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="globe" class="w-8 h-8 text-teal-600"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-gray-800">Geography</h4>
+                                    <p class="text-sm text-gray-500">ਭੂਗੋਲ</p>
+                                </div>
+                                <i data-lucide="chevron-right" class="text-gray-400"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="offline" class="tab-content">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                            Offline Content
+                        </h3>
+                        <p class="text-sm text-gray-500 mb-4">Download materials to study anytime, anywhere, even without an internet connection.</p>
+                        <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                            <ul class="space-y-4">
+                                <li class="flex items-center space-x-3">
+                                    <i data-lucide="file-check-2" class="w-5 h-5 text-green-500"></i>
+                                    <span class="text-gray-700">Mathematics Notes PDF</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <i data-lucide="film" class="w-5 h-5 text-purple-500"></i>
+                                    <span class="text-gray-700">Science Experiments Videos</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <i data-lucide="file-spreadsheet" class="w-5 h-5 text-blue-500"></i>
+                                    <span class="text-gray-700">Computer Skills Worksheets</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <i data-lucide="file-check-2" class="w-5 h-5 text-orange-500"></i>
+                                    <span class="text-gray-700">English Grammar Guide</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <i data-lucide="file-image" class="w-5 h-5 text-red-500"></i>
+                                    <span class="text-gray-700">History Timelines Chart</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <i data-lucide="file-image" class="w-5 h-5 text-teal-500"></i>
+                                    <span class="text-gray-700">Geography Map Pack</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="progress" class="tab-content">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Your Progress</h3>
+                        <p class="text-sm text-gray-500 mb-4">Track your mastery in each subject. Keep up the great work!</p>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="font-semibold text-gray-800">History</span>
+                                    <span class="font-semibold text-gray-800">80%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+                                    <div class="bg-gradient-to-r from-red-400 to-red-600 h-4 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="font-semibold text-gray-800">Mathematics</span>
+                                    <span class="font-semibold text-gray-800">70%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+                                    <div class="bg-gradient-to-r from-green-400 to-green-600 h-4 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="font-semibold text-gray-800">Science</span>
+                                    <span class="font-semibold text-gray-800">60%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+                                    <div class="bg-gradient-to-r from-purple-400 to-purple-600 h-4 rounded-full" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="font-semibold text-gray-800">Geography</span>
+                                    <span class="font-semibold text-gray-800">50%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+                                    <div class="bg-gradient-to-r from-teal-400 to-teal-600 h-4 rounded-full" style="width: 50%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="font-semibold text-gray-800">Computer Skills</span>
+                                    <span class="font-semibold text-gray-800">45%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+                                    <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-4 rounded-full" style="width: 45%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="font-semibold text-gray-800">English</span>
+                                    <span class="font-semibold text-gray-800">30%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+                                    <div class="bg-gradient-to-r from-orange-400 to-orange-600 h-4 rounded-full" style="width: 30%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <footer class="absolute bottom-0 left-0 right-0 p-4">
+                    <div class="bg-gray-800/90 backdrop-blur-sm text-white rounded-3xl p-3 shadow-2xl flex justify-around items-center">
+                        <button class="bottom-tab flex flex-col items-center space-y-1 bottom-tab-active" data-bottom="home">
+                            <i data-lucide="layout-grid" class="w-6 h-6"></i>
+                            <span class="text-xs font-semibold">Home</span>
+                        </button>
+
+                        <button class="bottom-tab flex flex-col items-center space-y-1 text-gray-400 hover:text-white" data-bottom="explore">
+                            <i data-lucide="compass" class="w-6 h-6"></i>
+                            <span class="text-xs font-semibold">Explore</span>
+                        </button>
+
+                        <button class="bottom-tab flex flex-col items-center space-y-1 text-gray-400 hover:text-white" data-bottom="aihelp">
+                            <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg border-2 border-slate-50">
+                                <i data-lucide="sparkles" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <span class="text-xs font-bold text-white mt-1">AI Help</span>
+                        </button>
+
+                        <button class="bottom-tab flex flex-col items-center space-y-1 text-gray-400 hover:text-white" data-bottom="downloads">
+                            <i data-lucide="download-cloud" class="w-6 h-6"></i>
+                            <span class="text-xs font-semibold">Downloads</span>
+                        </button>
+
+                        <button class="bottom-tab flex flex-col items-center space-y-1 text-gray-400 hover:text-white" data-bottom="profile">
+                            <i data-lucide="user-circle" class="w-6 h-6"></i>
+                            <span class="text-xs font-semibold">Profile</span>
+                        </button>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Top Tab Switching
+        const topTabs = document.querySelectorAll(".tab-button");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        topTabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                const target = tab.getAttribute("data-tab");
+
+                // Switch tab content
+                tabContents.forEach((tc) => {
+                    tc.classList.remove("active");
+                    if (tc.id === target) {
+                        tc.classList.add("active");
+                    }
+                });
+
+                // Update active tab style
+                topTabs.forEach((t) => {
+                    t.classList.remove("bg-indigo-600", "text-white");
+                    t.classList.add("bg-white", "text-gray-600");
+                });
+                tab.classList.add("bg-indigo-600", "text-white");
+                tab.classList.remove("bg-white", "text-gray-600");
+            });
+        });
+
+        // Bottom Tab Switching (for demonstration with alerts)
+        const bottomTabs = document.querySelectorAll(".bottom-tab");
+        const mainContent = document.getElementById("main-content");
+
+        bottomTabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                // Update active bottom tab style
+                bottomTabs.forEach((t) => {
+                    t.classList.remove("bottom-tab-active");
+                    t.classList.add("text-gray-400");
+                });
+                tab.classList.add("bottom-tab-active");
+                tab.classList.remove("text-gray-400");
+
+
+                const bottomTarget = tab.getAttribute("data-bottom");
+
+                // Hide all top-level tab contents before showing alerts for non-home tabs
+                tabContents.forEach(tc => tc.classList.remove('active'));
+
+                switch (bottomTarget) {
+                    case "home":
+                        // Show the first tab (Dashboard) when home is clicked
+                        document.getElementById("dashboard").classList.add("active");
+                        // Reset top nav to show "Dashboard" as active
+                        topTabs.forEach(t => {
+                            t.classList.remove('bg-indigo-600', 'text-white');
+                            t.classList.add('bg-white', 'text-gray-600');
+                        });
+                        document.querySelector('.tab-button[data-tab="dashboard"]').classList.add('bg-indigo-600', 'text-white');
+                        document.querySelector('.tab-button[data-tab="dashboard"]').classList.remove('bg-white', 'text-gray-600');
+                        break;
+                    case "explore":
+                        alert("Explore tab clicked! This is where a user could search for new courses and subjects.");
+                        break;
+                    case "aihelp":
+                        alert("AI Help tab clicked! This could launch an AI-powered chatbot to assist the student with their questions.");
+                        break;
+                    case "downloads":
+                        alert("Downloads tab clicked! This would show a list of all content saved for offline use.");
+                        break;
+                    case "profile":
+                        alert("Profile tab clicked! This would display the user's profile information, settings, and achievements.");
+                        break;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
