@@ -1,1 +1,1 @@
-# Yuvika---Smart-Education
+# Yuvika-Smart Education
